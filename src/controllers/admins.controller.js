@@ -6,7 +6,6 @@ const { v4: uuidv4 } = require('uuid');
 const createAdmin = async (req, res) => {
   const { full_name, email, phone, password, is_super = false } = req.body;
 
-  // Evitar duplicados
   const exists = await query('SELECT 1 FROM users WHERE email = $1', [email]);
   if (exists.rowCount > 0) return fail(res, 'Email ya registrado', 400);
 
