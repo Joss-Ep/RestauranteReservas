@@ -32,6 +32,15 @@ app.use(cors({
   }
 }));
 
+// Ruta raíz informativa
+/*app.get('/', (req, res) => ok(res, {
+  status: 'ok',
+  name: 'restaurant-reservations-backend',
+  version: '1.0.0',
+  docs: 'Usa /health y /api/*'
+}));*/
+app.get('/', (req, res) => res.redirect(302, '/health'));
+
 app.get('/health', (req, res) => ok(res, { status: 'ok' }));
 
 app.use('/api/auth', authRoutes);
