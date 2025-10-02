@@ -5,7 +5,6 @@ const { v4: uuidv4 } = require('uuid');
 const createTable = async (req, res) => {
   const { branch_id, name, capacity, status = 'available' } = req.body;
 
-  // validar branch
   const b = await query('SELECT 1 FROM branches WHERE id=$1', [branch_id]);
   if (b.rowCount === 0) return fail(res, 'Sucursal no existe', 400);
 
