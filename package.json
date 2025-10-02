@@ -1,17 +1,19 @@
 {
   "name": "restaurant-reservations-backend",
   "version": "1.0.0",
-  "description": "API REST para gestión de reservas de restaurante",
+  "description": "API REST para gestión de reservas de restaurante (Node.js + Express + PostgreSQL/Neon)",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "migrate": "node -e \"console.log('Ejecuta sql/migrations/001_init.sql en tu DB (Neon) usando su editor web)'\"",
-    "seed": "node -e \"console.log('Ejecuta sql/seed/001_superuser.sql en tu DB (Neon) usando su editor web)'\""
+    "migrate": "node -e \"console.log('Ejecuta sql/migrations/001_init.sql en Neon (SQL Editor)')\"",
+    "seed": "node -e \"console.log('Ejecuta sql/seed/001_superuser.sql y sql/seed/002_sample_data.sql en Neon (SQL Editor)')\""
   },
-  "keywords": [],
   "author": "Tú",
   "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
