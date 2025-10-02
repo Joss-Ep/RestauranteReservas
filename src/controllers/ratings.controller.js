@@ -5,7 +5,6 @@ const { v4: uuidv4 } = require('uuid');
 const createRating = async (req, res) => {
   const { reservation_id, client_id, branch_id, table_id, score, comment } = req.body;
 
-  // Validate reservation and ownership
   const r = await query(
     `SELECT id, status, client_id FROM reservations WHERE id=$1 AND branch_id=$2 AND table_id=$3`,
     [reservation_id, branch_id, table_id]
