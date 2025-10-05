@@ -6,7 +6,7 @@ const config = require('./config');
 const { pool } = require('./db');
 const { ok } = require('./utils/responses');
 
-// Rutas
+// Rutas asdasdas
 const authRoutes = require('./routes/auth.routes');
 const adminsRoutes = require('./routes/admins.routes');
 const clientsRoutes = require('./routes/clients.routes');
